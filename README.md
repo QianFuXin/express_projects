@@ -29,5 +29,5 @@ docker build -t express_projects_generator .
 -   运行容器
 
 ```shell
-docker run -it -P flask_projects_generator
+docker run -it -P express_projects_generator
 ```
