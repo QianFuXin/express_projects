@@ -1,6 +1,6 @@
 # express_projects
 
-一些基于express的项目
+基于express-generator
 
 -   代码格式化
 
@@ -23,11 +23,11 @@ npm install
 -   构建镜像
 
 ```shell
-docker build -t express_projects .
+docker build -t express_projects_generator .
 ```
 
 -   运行容器
 
 ```shell
-docker run -it -P flask_projects
+docker run -it -P flask_projects_generator
 ```
