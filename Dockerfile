@@ -10,6 +10,9 @@ COPY package*.json ./
 # 安装依赖 --registry=https://registry.npmmirror.com/ 可选
 RUN npm install --production
 
+# 全局安装 PM2
+RUN npm install pm2 -g
+
 # 将应用的源代码复制到工作目录
 COPY . .
 
@@ -17,4 +20,4 @@ COPY . .
 EXPOSE 3000
 
 # 定义启动命令
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "prod"]
