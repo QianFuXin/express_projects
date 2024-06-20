@@ -8,11 +8,16 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/users', usersRouter)
-
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
+function logErrors(err, req, res, next) {
+    console.error(err.stack)
+    next(err)
+}
+function errorHandler(err, req, res) {
+    res.status(500)
+    res.json({ error: err.message })
+}
+app.use(logErrors)
+app.use(errorHandler)
 sequelize
     .authenticate()
     .then(() => {
