@@ -3,16 +3,18 @@ const cors = require('cors')
 const express = require('express')
 const bodyParser = require('body-parser')
 const usersRouter = require('./routes/users')
+const itemsRouter = require('./routes/items')
 const { sequelize } = require('./models')
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/users', usersRouter)
+app.use('/items', itemsRouter)
 function logErrors(err, req, res, next) {
     console.error(err.stack)
     next(err)
 }
-function errorHandler(err, req, res,next) {
+function errorHandler(err, req, res, next) {
     res.status(500)
     res.json({ error: err.message })
 }
