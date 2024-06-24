@@ -6,7 +6,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     port: process.env.DB_PORT,
 })
 // MongoDB连接URI
-const mongoURI = 'mongodb://root:qianfuxin@qianfuxin.com:17017/flask?authSource=admin'
+const mongoURI = process.env.MONGO_URL
 
 // 连接到MongoDB
 mongoose
